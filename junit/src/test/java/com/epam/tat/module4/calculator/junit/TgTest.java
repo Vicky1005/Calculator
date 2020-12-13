@@ -8,24 +8,22 @@ import org.junit.runners.Parameterized;
 import java.util.Arrays;
 import java.util.Collection;
 
-import static java.lang.Double.NaN;
-
 public class TgTest extends BaseTest {
 
     @ParameterizedTest(name = " #{index} Tg operation of {0}")
     @MethodSource("valuesForTg")
     public void tgTest(double a, double expectedResult) {
         double result = calculator.tg(a);
-        Assertions.assertEquals(result, expectedResult, "Invalid result of tg operation");
+        Assertions.assertEquals(result, expectedResult, 0.001,"Invalid result of tg operation");
     }
 
     @Parameterized.Parameters
     public static Collection<Object[]> valuesForTg() {
         return Arrays.asList(new Object[][]{
-                {180.0, 1.0},
-                {-10.85, 1.0},
-                {0.0, NaN},
-                {Math.PI, 1.0}
+                {180.0, 1.338},
+                {-10.85, -6.820},
+                {0.0, 0.0},
+                {Math.PI, -1.224}
         });
     }
 }

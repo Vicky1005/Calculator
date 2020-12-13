@@ -7,8 +7,6 @@ import org.testng.annotations.Test;
 
 import java.lang.reflect.Method;
 
-import static java.lang.Double.NaN;
-
 public class TgTest extends BaseTest implements MethodName {
 
     @Test(dataProvider = "valuesForTgTest", groups = "trigonometric_function")
@@ -20,10 +18,10 @@ public class TgTest extends BaseTest implements MethodName {
     @DataProvider(name = "valuesForTgTest")
     public Object[][] valuesForTg() {
         return new Object[][]{
-                {180.0, 1.0},
-                {-10.85, 1.0},
-                {0.0, NaN},
-                {Math.PI, 1.0}
+                {180.0, 1.338},
+                {-10.85, -6.820},
+                {0.0, 0.0},
+                {Math.PI, -1.224}
         };
     }
 
